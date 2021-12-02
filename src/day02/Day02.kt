@@ -7,10 +7,10 @@ fun main() = Day02.solve()
 
 object Day02 : Day(2) {
 
+    // !!!!!!!!!!!
     override fun part1() =
         input.map { it.split(' ') }.groupBy({ it.first() }, { it.last().toInt() })
             .let { it["forward"]!!.sum() * (it["down"]!!.sum() - it["up"]!!.sum()) }
-
 
 
     override fun part2(): Int {
@@ -29,14 +29,4 @@ object Day02 : Day(2) {
         }
         return horizontal * depth
     }
-
-    /*down X increases your aim by X units.
-    up X decreases your aim by X units.
-    forward X does two things:
-        It increases your horizontal position by X units.
-        It increases your depth by your aim multiplied by X.
-
-    horizontal * depth*/
 }
-
-// 1855814
