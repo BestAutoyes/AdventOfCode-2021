@@ -13,7 +13,7 @@ object Day03 : Day(3) {
                 it * it.xor(4095)
             }
 
-    override fun part2() = IntArray(input[0].length).foldIndexed(input to input) { index, (oxygen, co2), _ ->
+    override fun part2() = (0 until input[0].length).foldIndexed(input to input) { index, (oxygen, co2), _ ->
         val oxygenBit = if ((oxygen.count { it[index] == '1' }) >= oxygen.size / 2.0) '1' else '0'
         val co2Bit = if ((co2.count { it[index] == '1' }) >= co2.size / 2.0) '1' else '0'
 
